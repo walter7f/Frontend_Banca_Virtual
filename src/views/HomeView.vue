@@ -89,7 +89,7 @@ export default {
 <style>
 
   .logo{
-    width: 900px;
+    width: 600px;
     height: 270px;
     padding: 2rem;
   }
@@ -115,6 +115,7 @@ export default {
     }
 
 .nav-link{
+  cursor: pointer;
   font-style: oblique;
   font-weight: 500 ;
   font-size: 20px;

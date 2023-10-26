@@ -7,6 +7,7 @@
 
         <div class="cont1" >
             <h1>Inicio de Sesión</h1>
+            <div class="div"> 
             <form class="formas">
                 <label>
                     <i class='bx bx-envelope' ></i>
@@ -18,7 +19,7 @@
                 </label>
                 <button type="button"  class="btn-primary"><router-link to="/about">Ingresar</router-link></button>
             </form>
-
+            </div>
             <br>
         </div>  
     </div>
@@ -45,6 +46,8 @@ list-style: none;
 }
 
 
+
+
 .formas label{
 display: flex;
 align-items: center;
@@ -53,10 +56,11 @@ border-radius: 20px;
 padding: 1px 10px;
 background-color: #fff;
 box-shadow: 0 2px 5px rgba(0,0,0,.1);
+
 }
 
 .formas label input{
-width: 40%;
+width: 100%;
 padding: 10px;
 background-color: #fff;
 border: none;
@@ -97,6 +101,15 @@ box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
 
 .btn-primary input[type="submit"]:hover{
 background-color: #7a7a9a;
+}
+.div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	text-align: center;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 5rem;
 }
 
 </style>
