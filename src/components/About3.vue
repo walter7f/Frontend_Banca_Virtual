@@ -94,7 +94,7 @@ components: {
   margin: 0 auto; 
   height: auto; /* Altura fija, puedes ajustar el valor según tus necesidades */
   min-height: 91vh;
-  background: url('../assets/umg.png') center center no-repeat, rgb(35, 34, 34);  
+  background-color: rgb(35, 34, 34);  
   background-size: 100px;
   
 }
