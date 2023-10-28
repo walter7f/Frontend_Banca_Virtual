@@ -45,9 +45,6 @@ text-decoration: none;
 list-style: none;
 }
 
-
-
-
 .formas label{
 display: flex;
 align-items: center;
@@ -89,18 +86,12 @@ background-color: #7a7a9a;
 }
 
 .btn-primary{
-    background-color: #9191db;
-color: "#fff";
-border-radius: 30px;
-border: none;
-padding: 5px 25px;
-cursor: pointer;
-margin-top: 20px;
-box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
-}
-
-.btn-primary input[type="submit"]:hover{
-background-color: #7a7a9a;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 .div{
 	display: flex;
@@ -111,5 +102,4 @@ background-color: #7a7a9a;
 	border-top-right-radius: 20px;
 	border-bottom-right-radius: 5rem;
 }
-
 </style>
