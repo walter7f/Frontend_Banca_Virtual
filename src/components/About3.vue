@@ -10,7 +10,7 @@
             <li class="item"><a @click="Transferencia_2">TRANSFERENCIAS</a></li>
             <li class="item"><a @click="Transaccion_3">TRANSFERENCIAS MOVILES</a></li>
             <li class="item"><a @click="Pagos_4">PAGOS</a></li>
-            <li class="item"><a href="#">CERRAR SESION</a></li>
+            <li class="item"><a @click="logOut">CERRAR SESION</a></li>
         </a>
       </div>
     </nav>
@@ -67,6 +67,7 @@ components: {
       mov: 1,
     };
   },
+
   methods: {
     Inicio_1() {
       this.mov = 1;
@@ -80,14 +81,19 @@ components: {
     Pagos_4() {
     this.mov = 4;
     },
-  }
+    logOut(){
+        localStorage.clear();
+    },
+    
+  },
 }
 </script>
 <style>
 .principal{
   max-width: 100%; 
   margin: 0 auto; 
-  height: 91vh; 
+  height: auto; /* Altura fija, puedes ajustar el valor según tus necesidades */
+  min-height: 91vh;
   background: url('../assets/umg.png') center center no-repeat, rgb(35, 34, 34);  
   background-size: 100px;
   

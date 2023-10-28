@@ -1,35 +1,62 @@
 <template>
-
     <div class="cs1">
-        <div>
-        <img alt="Vue logo" src="../assets/cartas.png" class="logos" width="300px" height="100px" >
-        </div>
-
-        <div class="cont1" >
-            <h1>Inicio de Sesión</h1>
-            <div class="div"> 
-            <form class="formas">
-                <label>
-                    <i class='bx bx-envelope' ></i>
-                    <input type="email" placeholder="Correo electronico">
-                </label>
-                <label>
-                    <i class='bx bx-lock'></i>
-                    <input type="password" placeholder="Contraseña">
-                </label>
-                <button type="button"  class="btn-primary"><router-link to="/about">Ingresar</router-link></button>
-            </form>
+      <div>
+        <img alt="Vue logo" src="../assets/cartas.png" class="logos" width="300px" height="100px">
+      </div>
+  
+      <div class="cont1">
+        <h1>Inicio de Sesión</h1>
+        <div class="div">
+          <form class="formas" @submit.prevent="register">
+            <label>
+              <i class='bx bx-envelope'></i>
+              <input v-model="email" 
+              type="email" 
+              id="email"
+              placeholder="Correo electronico">
+            </label>
+            <label>
+              <i class='bx bx-lock'></i>
+              <input v-model="password" 
+              id="password"
+              type="password" 
+              placeholder="Contraseña">
+            </label>
+            <div v-if="error" class="alert alert-danger" role="alert">
+              {{ error }}
             </div>
-            <br>
-        </div>  
+            <button type="submit" class="btn-primary">Ingresar</button>
+          </form>
+        </div>
+        <br>
+      </div>
     </div>
-</template>
-
-<script>
-export default {
-name: 'About1',
-}
-</script>
+  </template>
+  
+  <script>
+  import auth from "@/store/auth.js"
+  export default{
+    data:()=>({
+        email:"",
+        password:"",
+        error:null,
+    }),
+    methods:{
+      async register(){
+        try {
+          await auth.register(this.email, this.password);
+          this.$router.push('/about')
+        } catch (error) {
+          console.log(error);
+          this.error = "Error en el inicio de sesión. Verifica tus credenciales.";
+          
+        }
+      },
+    }
+  }
+  
+  </script>
+  
 
 <style>
 

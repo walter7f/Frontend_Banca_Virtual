@@ -10,16 +10,29 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+    meta: { requiresAuth: true } 
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+router.beforeEach((to,from, next)=>{
+  if(to.meta.requiresAuth){
+    const token= localStorage.getItem('token');
+    
+    if(token){
+      next();
+
+    }else{
+        next({name:'home'})
+    }
+  }else{
+    next();
+  }
 })
 
 export default router
