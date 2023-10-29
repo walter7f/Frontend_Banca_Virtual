@@ -8,7 +8,7 @@
             <!--<li><a href="#">FAVORITOS</a></li>
             <li><a href="#">TARJETAS</a></li>-->
             <li class="item"><a @click="Transferencia_2">TRANSFERENCIAS</a></li>
-            <li class="item"><a @click="Transaccion_3">GETIONES CON TARGETA</a></li>
+            <li class="item"><a @click="Transaccion_3">GESTIONES CON TARGETA</a></li>
             <li class="item"><a @click="Pagos_4">PAGOS</a></li>
             <li class="item"><a @click="Gestiones_5">GESTIONES</a></li>
             <li class="item"><a @click="logOut">CERRAR SESION</a></li>
