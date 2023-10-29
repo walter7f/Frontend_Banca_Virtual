@@ -10,6 +10,7 @@
       <option value="" disabled>Selecciona una cuenta a debitar</option>
       <option v-for="cuenta in dataCuenta" :key="cuenta.id" :value="cuenta.id">{{ cuenta.account_number+" "  }} {{ " @ "+cuenta.name_bank }}</option>
     </select>
+    {{ seleccion1 }}
   </div>
   </div>
   <div class="col-md-5">
