@@ -41,7 +41,7 @@ export default{
       try {
         const response = await axios.get(`http://localhost:3800/api/budget-management/account/${id}`);
         this.apiData = response.data;
-        //  console.log(this.apiData);
+        console.log(this.apiData);
       } catch (error) {
         console.error();
       }

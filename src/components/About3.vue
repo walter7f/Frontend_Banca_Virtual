@@ -8,8 +8,9 @@
             <!--<li><a href="#">FAVORITOS</a></li>
             <li><a href="#">TARJETAS</a></li>-->
             <li class="item"><a @click="Transferencia_2">TRANSFERENCIAS</a></li>
-            <li class="item"><a @click="Transaccion_3">TRANSFERENCIAS MOVILES</a></li>
+            <li class="item"><a @click="Transaccion_3">GETIONES CON TARGETA</a></li>
             <li class="item"><a @click="Pagos_4">PAGOS</a></li>
+            <li class="item"><a @click="Gestiones_5">GESTIONES</a></li>
             <li class="item"><a @click="logOut">CERRAR SESION</a></li>
         </a>
       </div>
@@ -39,6 +40,12 @@
         <Pagos/>
         </div>
       </div>
+      <div v-if="mov === 5">
+        <div>
+      
+        <Gestiones/>
+        </div>
+      </div>
 
 
 </div>
@@ -53,6 +60,7 @@ import Transferencia from './Transferencia.vue';
 import Transaccion from './Transaccion.vue';
 import Pagos from './Pagos.vue';
 import Inicio from './Inicio.vue';
+import Gestiones from './Gestiones.vue';
 
 export default {
 name: 'About3',
@@ -60,8 +68,9 @@ components: {
     Transferencia,
     Transaccion,
     Pagos,
-    Inicio
-  },
+    Inicio,
+    Gestiones
+},
   data() {
     return {
       mov: 1,
@@ -80,6 +89,9 @@ components: {
     },
     Pagos_4() {
     this.mov = 4;
+    },
+    Gestiones_5() {
+    this.mov = 5;
     },
     logOut(){
         localStorage.clear();
