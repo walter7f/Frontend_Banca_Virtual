@@ -9,8 +9,8 @@
       <select v-model="seleccion1" @change="handleChange"  class="form-control is-valid">
       <option value="" disabled>Selecciona una cuenta a debitar</option>
       <option v-for="cuenta in dataCuenta" :key="cuenta.id" :value="cuenta.id">{{ cuenta.account_number+" "  }} {{ " @ "+cuenta.name_bank }}</option>
-    </select>
-    {{ seleccion1 }}
+      </select>
+      <p>Has seleccionado: {{ seleccion1 }}</p>
   </div>
   </div>
   <div class="col-md-5">
@@ -61,6 +61,8 @@ export default{
         return{
             dataCuenta:[],
             seleccion1:"",
+            cantidad1:"",
+            cantidad2:"",
             selelccion2:"",
         }
     },
