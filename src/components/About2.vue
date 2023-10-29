@@ -13,26 +13,43 @@
         <div class="form-place">
             <div class="form-place2">
                 <!-- <p>Usa tu correo para registrarte</p> -->
-                <form class="form">
+                <form class="form" @submit.prevent="register" >
                     <label>
                         <i class='bx bx-user-check'></i>
-                        <input type="text" placeholder="Correo Electrónico">
+                        <input type="text" 
+                        name="name"
+                        id="name"
+                        v-model="name"
+                        placeholder="Nombre de usuario">
+
                     </label>
                     <label>
                         <i class='bx bx-user-check'></i>
-                        <input type="text" placeholder="Nombre de usuario">
+                        <input type="email"
+                        v-model="email"
+                        id="email"
+                         placeholder="Ingresa tu @ correo">
                     </label>
                     <label>
                         <i class='bx bx-envelope' ></i>
-                        <input type="email" placeholder="Correo electronico">
+                        <input type="text"
+                        v-model="country"
+                        id="country"
+                         placeholder="De que cuidad eres?">
                     </label>
                     <label>
                         <i class='bx bx-lock'></i>
-                        <input type="password" placeholder="Contraseña">
+                        <input type="password"
+                        v-model="password"
+                        id="password"
+                        placeholder="ingresa tu contraseña">
                     </label>
+                    <div v-if="error" class="alert alert-danger" role="alert">
+              {{ error }}
+            </div>
 
                     <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   Registrarse
 </button>
 
@@ -45,7 +62,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Cuenta Creada
+        <h1>Bienvenido {{ name }}</h1>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -69,8 +86,37 @@
 </template>
 
 <script>
+import auth from "@/store/auth.js"
 export default {
   name: 'About2',
+  data:()=>({
+    name:"",
+    email:"",
+    password:"",
+    country: "",
+    error:null,
+  }),
+  methods:{
+    async register(){
+        try {
+            await auth.createUser(this.name,this.email,this.password,this.country);
+
+            if (this.error==null){
+                await auth.register(this.email,this.password);
+            }
+
+            setTimeout(() => {
+                        this.$nextTick(() => {
+                    this.$router.push('/about');
+                });
+                }, 1000);
+            
+        } catch (error) {
+            this.error="Error al crear usuario"
+            
+        }
+    }
+  }
 }
 </script>
 
