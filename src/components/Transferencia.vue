@@ -6,21 +6,20 @@
      <div class="col-md-5">
       <label for="validationServer02" class="form-label">Cuenta a Debitar </label>
       <div>
-      <select v-model="seleccion" @change="handleChange"  class="form-control is-valid">
-      <option value="" disabled>Selecciona una cuenta</option>
+      <select v-model="seleccion1" @change="handleChange"  class="form-control is-valid">
+      <option value="" disabled>Selecciona una cuenta a debitar</option>
       <option v-for="cuenta in dataCuenta" :key="cuenta.id" :value="cuenta.id">{{ cuenta.account_number+" "  }} {{ " @ "+cuenta.name_bank }}</option>
     </select>
   </div>
   </div>
   <div class="col-md-5">
     <label for="validationServer02" class="form-label">Cuenta a Creditar</label>
-    
-    <input type="text"
-    v-model="account_number"
-    id="account_number"
-    name="account_number"
-    placeholder="@ Ingresa cuenta Acreditar"
-     class="form-control is-valid">
+    <div>
+      <select v-model="selelccion2" @change="handleChange"  class="form-control is-valid">
+      <option value="" disabled>Selecciona una cuenta a debitar</option>
+      <option v-for="cuenta in dataCuenta" :key="cuenta.id" :value="cuenta.id">{{ cuenta.account_number+" "  }} {{ " @ "+cuenta.name_bank }}</option>
+    </select>
+    </div>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -60,7 +59,8 @@ export default{
     data(){
         return{
             dataCuenta:[],
-            seleccion:"",
+            seleccion1:"",
+            selelccion2:"",
         }
     },
     created(){
