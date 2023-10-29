@@ -3,7 +3,7 @@
         <div style="margin-top: 2.5rem;">
             <div class="credit-card">
                 <div class="credit-card-header">
-                <h1>Nombre del Titular</h1>
+                <h1>Walter Diaz</h1>
                 </div>
                 <div class="credit-card-number">
                 **** **** **** 1234
