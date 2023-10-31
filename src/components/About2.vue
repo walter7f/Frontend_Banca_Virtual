@@ -109,7 +109,7 @@ export default {
                         this.$nextTick(() => {
                     this.$router.push('/about');
                 });
-                }, 1000);
+                }, 5000);
             
         } catch (error) {
             this.error="Error al crear usuario"

@@ -17,10 +17,27 @@
             Banking Send no se hace responsabla de las lisitaciones que el usuario pueda cometer
         </div>
     </div>
-
+</div>
+<div class="container" v-if="apiData.length === 0">
+  <!-- Iterar sobre los datos si hay elementos en apiData -->
+  <div class="card text-center item">
+    <div class="card-header" style="display: flex;">
+      <div class="alert alert-danger" role="alert">
+        <h2>No Tienes ninguna cuenta en estos momentos </h2>
 </div>
 
-
+    </div>
+    <div class="card-body">
+      <div style="display: flex; justify-content: center;">
+          <h3>Solicita ya Tu cuenta es facil y muy rapido</h3>
+      </div>
+      
+    </div>
+    <div class="card-footer text-muted">
+      Banking Send no se hace responsable de las acciones que el usuario pueda cometer
+    </div>
+  </div>
+</div>
 </template>
 <script>
 import axios from 'axios';
@@ -41,7 +58,7 @@ export default{
       try {
         const response = await axios.get(`http://localhost:3800/api/budget-management/account/${id}`);
         this.apiData = response.data;
-        console.log(this.apiData);
+        //  console.log(this.apiData);
       } catch (error) {
         console.error();
       }

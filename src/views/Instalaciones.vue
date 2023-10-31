@@ -2,7 +2,7 @@
     <div class="instal12" >
         <h1 class="hhhh1">Nuestras instalaciones</h1>
             <div >
-            <img alt=" " src="../assets/3.jpeg" class="logo"> 
+            <img alt=" " src="../assets/3.jpeg" class="logo111"> 
             </div>
             <div class="tttp box-container">
             <p>Nuestas instalaciones han sido galardonadas por nuestras mejores atenciones por nuestros colaboradores en cual sera un gusto atenderle y de antemano muchas gracias por preferirnos. </p>
@@ -32,7 +32,7 @@ export default{
  height: 34rem;
 }
 
-.logo{
+.logo111{
  width: 30%;
  height: 15rem;
  margin-left: 15rem;

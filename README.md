@@ -26,6 +26,8 @@
 
 # [Documentacion_Manual_Usuario/Tecnico](https://drive.google.com/drive/folders/1oUVDF4L9mbjQOKofwQLS_VZRdRUkoMzN?usp=sharing)
 
+[Video](https://drive.google.com/file/d/12G69-3zwouk8lnXH-nCOoJx9S3jBwteb/view?usp=drive_link)
+
 # Como iniciar 
 
 
